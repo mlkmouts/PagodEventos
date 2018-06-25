@@ -8,20 +8,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateComponent } from './components/create/create.component';
 import { IndexComponent } from './components/index/index.component';
 import { EditComponent } from './components/edit/edit.component';
-import { createComponent } from '@angular/compiler/src/core';
 
 const routes:Routes=[
   {
-    path:"Create",
+    path:"create",
     component:CreateComponent
 
 },
 {
-  path:"Index",
+  path:"index",
   component:IndexComponent
 },
 {
-  path:"Edit",
+  path:"edit",
   component:EditComponent
 }
 ]
