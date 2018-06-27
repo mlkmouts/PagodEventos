@@ -8,12 +8,12 @@ export class EventoService {
     id: 0,
     nome: "Thiaguinho",
     local: "P12",
-    data: "30/06/2018"
+    data: new Date(2018, 9, 14)
   }, {
     id: 1,
     nome: "Turma do Pagode",
     local: "OBS",
-    data: "03/07/2018"
+    data: new Date (2018, 4, 2)
   }]
   constructor() { }
   addEvento(evento): void {
@@ -21,8 +21,8 @@ export class EventoService {
   }
 
   editarEvento(evento) {
-    for (var i = 0; i <= this.eventos.length; i++) {
-      if (this.eventos[i] == evento.id) {
+    for (var i = 0; i < this.eventos.length; i++) {
+      if (this.eventos[i].id == evento.id) {
         this.eventos[i] == evento;
       }
     }
@@ -33,9 +33,19 @@ export class EventoService {
   }
 
   getEvento(idEvento) {
-    for(var i=0; i<=this.eventos.length; i++){
+    for(var i=0; i<this.eventos.length; i++){
       if (this.eventos[i].id == idEvento){
         return this.eventos[i];
+      }
+    }
+  }
+
+  removerEvento(idEvento){
+    debugger;
+    for(var i=0; i<this.eventos.length; i++){
+      if (this.eventos[i].id == idEvento){
+        this.eventos.splice(i, 1);
+  
       }
     }
   }

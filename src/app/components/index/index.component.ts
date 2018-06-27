@@ -14,5 +14,8 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  removerEvento(idEvento){
+    this.eventoSevice.removerEvento(idEvento);
+    this.eventos=this.eventoSevice.getEventos();
+  }
 }

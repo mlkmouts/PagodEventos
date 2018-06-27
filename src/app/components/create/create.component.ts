@@ -8,19 +8,24 @@ import { EventoService } from '../../evento.service';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  angForm:FormGroup;
-  constructor(private fb:FormBuilder, private eventoService:EventoService) {
-    this.angForm=this.fb.group({
-      nome:  ['', Validators.required],
-      local:  ['', Validators.required],
-      data:  ['', Validators.required]
+  angForm: FormGroup;
+  constructor(private fb: FormBuilder, private eventoService: EventoService) {
+    this.angForm = this.fb.group({
+      nome: ['', Validators.required],
+      local: ['', Validators.required],
+      data: ['', Validators.required]
 
     })
-   }
-   addEvento():void{
-    this.angForm.value.id=Math.random();
-    this.eventoService.addEvento(this.angForm.value);
-   }
+  }
+  addEvento(): void {
+    let evento;
+    evento = this.angForm.value;
+
+    evento.id = Math.random;
+    evento.data = new Date(this.angForm.value)
+
+    this.eventoService.addEvento(evento);
+  }
 
   ngOnInit() {
   }

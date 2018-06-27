@@ -11,7 +11,7 @@ import { EventoService } from '../../evento.service';
 export class EditComponent implements OnInit {
 
   angForm: FormGroup;
-  banda = {};
+  banda;
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -33,6 +33,7 @@ export class EditComponent implements OnInit {
     this.route.params.subscribe(param => {
       console.log(param["id"])
       this.banda=this.eventoService.getEvento(param["id"])
+      this.banda.data = this.banda.data.toISOString().substring(0, 10)
     })
 
 

@@ -13,9 +13,9 @@
       <tr *ngFor="let evento of eventos">
         <td>{{evento.nome}}</td>
         <td>{{evento.local}}</td>
-        <td>{{evento.data}}</td>
+        <td>{{evento.data | date: 'dd/MM/yyyy'}}</td>
         <td><a [routerLink]="['/edit', evento.id]" class="btn btn-primary">Editar</a></td>
-        <td><a [routerLink]="[]" class="btn btn-danger">Remover</a></td>
+        <td><a (click)="removerEvento(evento.id)" class="btn btn-danger">Remover</a></td>
       </tr>
      
 
