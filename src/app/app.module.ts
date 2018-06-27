@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -20,7 +21,7 @@ const routes:Routes=[
   component:IndexComponent
 },
 {
-  path:"edit",
+  path:"edit/:id",
   component:EditComponent
 }
 ]
@@ -36,7 +37,8 @@ const routes:Routes=[
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

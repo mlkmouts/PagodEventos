@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventoService } from '../../evento.service';
 
 @Component({
   selector: 'app-index',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-
-  constructor() { }
+  eventos;
+  constructor(private eventoSevice:EventoService) { 
+    this.eventos=eventoSevice.getEventos();
+  }
 
   ngOnInit() {
   }
