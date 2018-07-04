@@ -1,7 +1,7 @@
 <h3>BEM-VINDO</h3>
 
-<table class="table table-hover table-dark">
-    <thead>
+<table class="table">
+    <thead class="thead-dark">
       <tr>
         <th scope="col">Banda</th>
         <th scope="col">Local</th>
@@ -13,7 +13,7 @@
       <tr *ngFor="let evento of eventos">
         <td>{{evento.nome}}</td>
         <td>{{evento.local}}</td>
-        <td>{{evento.data | date: 'dd/MM/yyyy'}}</td>
+        <td>{{evento.data | amCalendar}}</td>
         <td><a [routerLink]="['/edit', evento.id]" class="btn btn-primary">Editar</a></td>
         <td><a (click)="removerEvento(evento.id)" class="btn btn-danger">Remover</a></td>
       </tr>

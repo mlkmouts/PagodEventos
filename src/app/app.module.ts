@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MomentModule } from 'ngx-moment';
 
 import { AppComponent } from './app.component';
 
@@ -17,7 +18,7 @@ const routes:Routes=[
 
 },
 {
-  path:"index",
+  path:"",
   component:IndexComponent
 },
 {
@@ -38,7 +39,8 @@ const routes:Routes=[
     BrowserModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MomentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
