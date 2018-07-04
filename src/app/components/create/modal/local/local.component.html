@@ -1,0 +1,33 @@
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Cadastro de Local</h4>
+      <button type="button" class="close" aria-label="Fechar" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="localForm" novalidate>
+        <!-- Campo do formulário Estado -->
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Estado</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="estado" #estado>
+        </div>
+        <div *ngIf="localForm.controls['estado'].invalid && (localForm.controls['estado'].dirty || localForm.controls['estado'].touched)"
+              class="alert alert-danger">
+          <div *ngIf="localForm.controls['estado'].errors.required">
+            Estado é obrigatório.
+          </div>
+        </div>
+
+        <!-- TODO: Fazer o resto do form cidade cep complemento contato -->
+        
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="c('Close click')">Fechar</button>
+      <button (click)="cadastrarLocal()" type="button" class="btn btn-primary">Cadastrar</button>
+    </div>
+  </ng-template>
+  <button class="btn btn-outline-secondary" (click)="open(content)">Adicionar Local</button>
+  
+  
