@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EventoService } from '../../evento.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-edit',
@@ -33,7 +34,7 @@ export class EditComponent implements OnInit {
     this.route.params.subscribe(param => {
       console.log(param["id"])
       this.banda=this.eventoService.getEvento(param["id"])
-      this.banda.data = this.banda.data.toISOString().substring(0, 10)
+     this.banda.data=moment(this.banda.data).format("Y-MM-DD");
     })
 
 

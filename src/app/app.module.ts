@@ -1,15 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MomentModule } from 'ngx-moment';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 import { AppComponent } from './app.component';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateComponent } from './components/create/create.component';
 import { IndexComponent } from './components/index/index.component';
 import { EditComponent } from './components/edit/edit.component';
+import { BandaComponent } from './components/create/modal/banda/banda.component';
+import { LocalComponent } from './components/create/modal/local/local.component';
+
 
 const routes:Routes=[
   {
@@ -33,14 +37,18 @@ const routes:Routes=[
     AppComponent,
     CreateComponent,
     IndexComponent,
-    EditComponent
+    EditComponent,
+    BandaComponent,
+    LocalComponent
   ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
-    MomentModule
+    MomentModule,
+    NgSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
