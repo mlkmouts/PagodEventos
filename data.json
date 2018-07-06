@@ -1,0 +1,51 @@
+{
+    "bandas": [
+        {
+            "id": 0,
+            "nome": "Thiaguinho",
+            "integrantes": [
+                "Thiaguinho"
+            ],
+            "contato": 47999238765
+        },
+        {
+            "id": 1,
+            "nome": "Turma do Pagode",
+            "integrantes": [
+                " Leíz",
+                "Leandro Filé",
+                "Marcelinho TDP",
+                "Caramelo",
+                "Neni",
+                "Thiagão",
+                "Fabiano Art",
+                "Rubinho"
+            ],
+            "contato": 47999238765
+        }
+    ],
+    "locais": [
+        {
+            "id": 0,
+            "estado": "Santa Catarina",
+            "cidade": "Blumenau",
+            "cep": 89012520,
+            "complemento": "Vila Germanica",
+            "contato": 4733238765
+        }
+    ],
+    "evento": [
+        {
+            "id": 0,
+            "idBanda": 0,
+            "idLocal": 0,
+            "data": "2018-07-19"
+        },
+        {
+            "id": 1,
+            "idBanda": 1,
+            "idLocal": 0,
+            "data": "2018-07-21"
+        }
+    ]
+}
