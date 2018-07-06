@@ -22,7 +22,12 @@
   <div class="form-group">
     <label for="formGroupExampleInput2">Local</label>
     <!-- Substituir input abaixo pelo ng-select -->
-    <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="local" #local>
+    <ng-select formControlName="nome" name="nome" 
+    [items]="local" 
+      bindLabel="nome"
+      bindValue="id"
+      [(ngModel)]="selectedPersonId">
+</ng-select>
   </div>
   <div *ngIf="angForm.controls['local'].invalid && (angForm.controls['local'].dirty || angForm.controls['local'].touched)"
         class="alert alert-danger">
